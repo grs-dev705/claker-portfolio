@@ -35,8 +35,9 @@ const Nav = () => {
             <span className="absolute -right-2 top-0 w-1.5 h-1.5 rounded-full bg-cadet blink" />
           </div>
         </a>
-        <nav className="flex items-center gap-4 md:gap-10 font-mono-tag text-[10px] md:text-[11px] uppercase">
-          {[
+            <nav className="flex items-center gap-4 md:gap-10 font-mono-tag text-[10px] md:text-[11px] uppercase">
+              
+           {[
             ["Work", "#work"],
             ["Services", "#services"],
             ["Process", "#process"],
@@ -81,7 +82,7 @@ const Hero = () => {
       <div className="absolute bottom-0 left-0 right-0 h-[6vh] bg-eerie-deep z-30 pointer-events-none" />
 
       <motion.div style={{ y, opacity }} className="absolute inset-0">
-        <img
+         <img
           src={heroImg}
           alt="Filmmaker portrait"
           width={1080}
@@ -108,12 +109,12 @@ const Hero = () => {
           className="font-mono-tag text-[11px] uppercase text-cadet mb-6 flex items-center gap-3"
         >
           <span className="h-px w-10 bg-cadet" />
-          A Director's Cut · MMXXV
+          photographer and filmmaker
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.3 }}
           className="font-display text-seasalt text-[16vw] md:text-[12vw] leading-[0.85] tracking-[-0.04em] text-balance"
         >
@@ -127,8 +128,7 @@ const Hero = () => {
           className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-end"
         >
           <p className="md:col-span-5 font-serif-edit text-lg md:text-xl text-seasalt/80 leading-relaxed">
-            Allaoui Mohammed Abdellah — known as <span className="italic">Claker</span> — directs cinematic
-            films, brand stories and the quiet space between two cuts.
+            Allaoui Mohammed Abdellah — known as <span className="italic">(Claker)</span> — a photographer and filmmaker specializing in monochrome storytelling and brand films. With four years of content creation and three years in professional filmmaking, I combine a cinematic vision with precision color grading to deliver high-impact visual narratives.
           </p>
           <div className="md:col-span-3 md:col-start-9 flex flex-col gap-2 font-mono-tag text-[11px] uppercase text-seasalt/60">
             <div className="flex justify-between border-b border-seasalt/15 pb-2">
@@ -159,7 +159,7 @@ const Hero = () => {
 
 /* ───────────────────────── Marquee ───────────────────────── */
 const Marquee = () => {
-  const items = ["Cinematic Films", "·", "Brand Stories", "·", "Color Grading", "·", "Direction", "·", "Photography", "·"];
+  const items = ["Cinematic Films", "·", "Brand Stories", "·", "Color Grading", "·", "Social Media Content", "·", "Photography", "·"];
   return (
     <div className="relative bg-eerie-deep border-y border-seasalt/10 py-6 overflow-hidden">
       <div className="flex scroll-marquee whitespace-nowrap gap-12">
@@ -385,8 +385,8 @@ const Contact = () => (
         ◐ 004 / Fade in
       </p>
       <h2 className="font-display text-6xl md:text-[12vw] leading-[0.85] tracking-[-0.05em]">
-        Let's roll<br />
-        <span className="font-serif-edit italic text-silver">something quiet.</span>
+        Turn your vision into reality.<br />
+        <span className="font-serif-edit italic text-silver"></span>
       </h2>
       <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
         <div className="md:col-span-6">
@@ -394,7 +394,7 @@ const Contact = () => (
             href="mailto:hello@claker.film"
             className="inline-flex items-center gap-4 font-display text-2xl md:text-3xl text-seasalt border-b border-seasalt/30 pb-2 hover:border-seasalt transition-colors"
           >
-            hello@claker.film
+             allaouimohammedabdellah@gmail.com
             <svg width="20" height="20" viewBox="0 0 14 14" fill="none">
               <path d="M1 13L13 1M13 1H4M13 1V10" stroke="currentColor" strokeWidth="1.2" />
             </svg>
@@ -402,14 +402,16 @@ const Contact = () => (
         </div>
         <div className="md:col-span-3 md:col-start-8 font-mono-tag text-[11px] uppercase text-seasalt/60 space-y-2">
           <p className="text-cadet">Based</p>
-          <p className="text-seasalt">Casablanca · Worldwide</p>
+          <p className="text-seasalt">ALGERIA · Worldwide</p>
         </div>
         <div className="md:col-span-2 font-mono-tag text-[11px] uppercase text-seasalt/60 space-y-2">
           <p className="text-cadet">Socials</p>
           <div className="flex flex-col gap-1 text-seasalt">
+          <a href="#" className="hover:text-cadet transition">(allaouimohammedabdellah)↗</a>
+          <a href="#" className="hover:text-cadet transition">+213 663128949 ↗</a>
             <a href="#" className="hover:text-cadet transition">Instagram ↗</a>
-            <a href="#" className="hover:text-cadet transition">Vimeo ↗</a>
-            <a href="#" className="hover:text-cadet transition">Behance ↗</a>
+            <a href="#" className="hover:text-cadet transition">youtube ↗</a>
+            <a href="#" className="hover:text-cadet transition">Tik Tok ↗</a>
           </div>
         </div>
       </div>
@@ -423,7 +425,7 @@ const Footer = () => (
     <div className="mx-auto max-w-[1600px] px-6 md:px-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-mono-tag text-[10px] uppercase">
       <p>© MMXXV · Allaoui Mohammed Abdellah</p>
       <p className="text-cadet">END OF REEL · 24.000 fps</p>
-      <p>Designed in the cutting room.</p>
+      <p>Designed by GRSDEV.</p>
     </div>
   </footer>
 );
