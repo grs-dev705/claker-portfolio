@@ -394,7 +394,8 @@ const Contact = () => (
             href="mailto:hello@claker.film"
             className="inline-flex items-center gap-4 font-display text-2xl md:text-3xl text-seasalt border-b border-seasalt/30 pb-2 hover:border-seasalt transition-colors"
           >
-             allaouimohammedabdellah@gmail.com
+             allaouimohammedabdellah
+             @gmail.com
             <svg width="20" height="20" viewBox="0 0 14 14" fill="none">
               <path d="M1 13L13 1M13 1H4M13 1V10" stroke="currentColor" strokeWidth="1.2" />
             </svg>
