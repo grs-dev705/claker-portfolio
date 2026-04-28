@@ -1,7 +1,11 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import heroImg from "@/assets/hero-filmmaker.jpg";
-import projectsData from '../projects.json';
+import workCinematic from "@/assets/work-cinematic.jpg";
+import workBrand from "@/assets/work-brand.jpg";
+import workGrading from "@/assets/work-grading.jpg";
+import workArchitecture from "@/assets/work-architecture.jpg";
+import workPortrait from "@/assets/work-portrait.jpg";
 
 /* ───────────────────────── Nav ───────────────────────── */
 const Nav = () => {
@@ -243,28 +247,39 @@ const WorkCard = ({ work, index }: { work: Work; index: number }) => {
   );
 };
 
-const works = projectsData;
-  <section id="work" className="relative bg-seasalt py-24 md:py-40">
-    <div className="mx-auto max-w-[1600px] px-6 md:px-10">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-20 items-end">
-        <div className="md:col-span-2 font-mono-tag text-[11px] uppercase text-cadet">
-          ◐ 002 / Selected
+const WorkSection = () => {
+  const works = projectsData;
+
+  return (
+    <section id="work" className="relative bg-seasalt py-24 md:py-40">
+      <div className="mx-auto max-w-[1600px] px-6 md:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-20 items-end">
+           <div className="md:col-span-7">
+             <h2 className="font-display text-eerie text-5xl md:text-7xl">Selected Work</h2>
+           </div>
         </div>
-        <h2 className="md:col-span-7 font-display text-eerie text-5xl md:text-7xl lg:text-8xl tracking-[-0.04em] leading-[0.9]">
-          Selected work,<br />
-          <span className="font-serif-edit italic text-cadet">cut for the screen.</span>
-        </h2>
-        <p className="md:col-span-3 font-serif-edit text-eerie/70 text-base leading-relaxed">
-          A small archive of recent films and stills. Each frame is a decision — light, distance, restraint.
-        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
+          {works.length > 0 ? (
+            works.map((w, i) => (
+              <WorkCard key={w.num || i} work={w} index={i} />
+            ))
+          ) : (
+            <p className="col-span-12 text-center text-gray-400 py-20">New projects coming soon.</p>
+          )}
+        </div>
       </div>
-
+    </section>
+  );
+};
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
-  {works.map((w, i) => (
-    <WorkCard key={w.num || i} work={w} index={i} />
-  ))}
-</div>
-
+        {works.map((w, i) => (
+          <WorkCard key={w.num} work={w} index={i} />
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 /* ───────────────────────── Process ───────────────────────── */
 const ProcessSection = () => {
@@ -385,7 +400,7 @@ const Contact = () => (
       <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
         <div className="md:col-span-6">
           <a
-            href="mailto: allaouimohammedabdellah@gmail.com"
+            href="mailto:allaouimohammedabdellah@gmail.com"
             className="inline-flex items-center gap-4 font-display text-2xl md:text-3xl text-seasalt border-b border-seasalt/30 pb-2 hover:border-seasalt transition-colors"
           >
              allaouimohammedabdellah
@@ -432,7 +447,7 @@ const Index = () => {
       <Nav />
       <Hero />
       <Marquee />
-    
+      <ServicesSection />
       <WorkSection />
       <ProcessSection />
       <Contact />
