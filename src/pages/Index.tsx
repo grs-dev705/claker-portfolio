@@ -1,11 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import heroImg from "@/assets/hero-filmmaker.jpg";
-import workCinematic from "@/assets/work-cinematic.jpg";
-import workBrand from "@/assets/work-brand.jpg";
-import workGrading from "@/assets/work-grading.jpg";
-import workArchitecture from "@/assets/work-architecture.jpg";
-import workPortrait from "@/assets/work-portrait.jpg";
+import projectsData from '../projects.json';
 
 /* ───────────────────────── Nav ───────────────────────── */
 const Nav = () => {
@@ -247,7 +243,7 @@ const WorkCard = ({ work, index }: { work: Work; index: number }) => {
   );
 };
 
-const WorkSection = () => (
+const works = projectsData;
   <section id="work" className="relative bg-seasalt py-24 md:py-40">
     <div className="mx-auto max-w-[1600px] px-6 md:px-10">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-20 items-end">
@@ -264,13 +260,11 @@ const WorkSection = () => (
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
-        {works.map((w, i) => (
-          <WorkCard key={w.num} work={w} index={i} />
-        ))}
-      </div>
-    </div>
-  </section>
-);
+  {works.map((w, i) => (
+    <WorkCard key={w.num || i} work={w} index={i} />
+  ))}
+</div>
+
 
 /* ───────────────────────── Process ───────────────────────── */
 const ProcessSection = () => {
@@ -391,7 +385,7 @@ const Contact = () => (
       <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
         <div className="md:col-span-6">
           <a
-            href="mailto:hello@claker.film"
+            href="mailto: allaouimohammedabdellah@gmail.com"
             className="inline-flex items-center gap-4 font-display text-2xl md:text-3xl text-seasalt border-b border-seasalt/30 pb-2 hover:border-seasalt transition-colors"
           >
              allaouimohammedabdellah
@@ -438,7 +432,7 @@ const Index = () => {
       <Nav />
       <Hero />
       <Marquee />
-      <ServicesSection />
+    
       <WorkSection />
       <ProcessSection />
       <Contact />
